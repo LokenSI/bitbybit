@@ -684,6 +684,10 @@ export class DrawHelper extends DrawHelperCore {
                     pbmat.metalness = 0.4;
                     pbmat.gloss = 0.2;
                     pbmat.opacity = alpha;
+                    // Enable alpha blending for transparency when opacity < 1
+                    if (alpha < 1) {
+                        pbmat.blendType = pc.BLEND_NORMAL;
+                    }
                     // Use both depthBias and slopeDepthBias to push faces behind edges
                     pbmat.depthBias = zOffset;
                     pbmat.slopeDepthBias = slopeOffset;
@@ -1252,6 +1256,10 @@ export class DrawHelper extends DrawHelperCore {
                         mat.metalness = 0.5;
                         mat.gloss = 0.3;
                         mat.opacity = options.faceOpacity;
+                        // Enable alpha blending for transparency when opacity < 1
+                        if (options.faceOpacity < 1) {
+                            mat.blendType = pc.BLEND_NORMAL;
+                        }
                         mat.update();
                         return mat;
                     });

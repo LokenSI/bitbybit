@@ -233,6 +233,7 @@ async function createDrawingExamples(bitbybit: BitByBitBase) {
                 [90, -10, 0],
                 [90, 0, 0],
                 [100, 0, 0],
+                [110,-10,0]
             ],
         },
         {
@@ -251,8 +252,8 @@ async function createDrawingExamples(bitbybit: BitByBitBase) {
         },
     ];
     const polylinesDrawOptions = new Inputs.Draw.DrawBasicGeometryOptions();
-    polylinesDrawOptions.colours = ["#ff0000", "#00ff00", "#0000ff"]; // RGB
-    polylinesDrawOptions.size = 2;
+    polylinesDrawOptions.colours = ["#ff0000", "#802307", "#0000ff"]; // RGB
+    polylinesDrawOptions.size = 5;
     await bitbybit.draw.drawAnyAsync({
         entity: polylines as Inputs.Base.Polyline3[],
         options: polylinesDrawOptions,
@@ -533,7 +534,7 @@ async function createDrawingExamples(bitbybit: BitByBitBase) {
     const arrowPolylinesOptions = new Inputs.Draw.DrawBasicGeometryOptions();
     arrowPolylinesOptions.colours = ["#ff0000", "#00ff00", "#0000ff"]; // RGB
     arrowPolylinesOptions.size = 2;
-    arrowPolylinesOptions.arrowSize = 2.5;
+    arrowPolylinesOptions.arrowSize = 1.5;
     arrowPolylinesOptions.arrowAngle = 30;
     await bitbybit.draw.drawAnyAsync({
         entity: arrowPolylines,
@@ -552,7 +553,7 @@ async function createDrawingExamples(bitbybit: BitByBitBase) {
         points: wirePoints,
     });
     const wireDrawOptions = new Inputs.Draw.DrawOcctShapeOptions();
-    wireDrawOptions.edgeColour = "#ff8800"; // Orange edges
+    wireDrawOptions.edgeColour = "#1720a0"; // Orange edges
     wireDrawOptions.edgeWidth = 3;
     wireDrawOptions.drawEdges = true;
     wireDrawOptions.drawFaces = false;
